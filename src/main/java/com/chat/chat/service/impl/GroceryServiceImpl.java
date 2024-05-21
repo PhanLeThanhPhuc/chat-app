@@ -5,6 +5,9 @@ import com.chat.chat.repository.ItemRepository;
 import com.chat.chat.request.GroceryItemRequest;
 import com.chat.chat.response.GroceryItemResponse;
 import com.chat.chat.service.GroceryService;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class GroceryServiceImpl implements GroceryService{
 
-    @Autowired
     ItemRepository itemRepository;
 
     @Override

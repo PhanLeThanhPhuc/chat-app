@@ -6,6 +6,9 @@ import com.chat.chat.repository.ConversationRepository;
 import com.chat.chat.response.ConversationResponse;
 import com.chat.chat.response.GroceryItemResponse;
 import com.chat.chat.service.ConversationService;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class ConversationServiceImpl implements ConversationService {
 
-    @Autowired
     ConversationRepository conversationRepository;
 
     @Override
