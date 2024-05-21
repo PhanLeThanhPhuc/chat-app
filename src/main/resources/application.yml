@@ -6,3 +6,5 @@ logging:
   level:
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
     org.springframework.data.mongodb.repository.query: DEBUG
+jwt:
+  singerKey: "RCqaMFVh2z4qNXr43dQOfnutf4lX3NLt9Cja9KKU7FJgb/xCqPU6z8wmVJdR9vjr"

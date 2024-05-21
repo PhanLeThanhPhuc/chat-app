@@ -1,8 +1,7 @@
 package com.chat.chat.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -13,15 +12,18 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "users")
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Users {
 
     @Id
-    private String id;
-    private String username;
-    private String email;
-    private String password;
+     String id;
+     String username;
+     String email;
+     String password;
 
     @Field("created_at")
-    private Date createdAt;
+     Date createdAt;
+
 
 }
